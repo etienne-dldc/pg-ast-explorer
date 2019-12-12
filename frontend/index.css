@@ -1,0 +1,39 @@
+html,
+body {
+  margin: 0;
+  font-family: "Fira Code";
+  background: white;
+  line-height: 1.5;
+}
+
+p {
+  margin: 0;
+}
+
+pre {
+  margin: 0;
+  font-family: "Fira Code";
+}
+
+.node-type {
+  color: #f44336;
+}
+
+.btn {
+  color: #2196f3;
+  cursor: pointer;
+}
+
+.indent {
+  margin-left: 4px;
+  padding-left: 10px;
+  border-left: 2px solid #b0bec5;
+}
+
+.value-type {
+  margin-left: 5px;
+  display: inline-block;
+  font-weight: 100;
+  color: #b0bec5;
+  font-size: 0.8em;
+}
