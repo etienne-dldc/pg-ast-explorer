@@ -19,12 +19,12 @@
   },
   "keywords": [],
   "devDependencies": {
-    "electron": "^7.1.4",
+    "electron": "^7.1.7",
     "electron-rebuild": "^1.8.8",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
-    "core-js": "^3.4.8",
+    "core-js": "^3.6.1",
     "electron-better-ipc": "^0.7.0",
     "electron-devtools-installer": "^2.2.4",
     "pg-query-parser": "^0.2.4",
