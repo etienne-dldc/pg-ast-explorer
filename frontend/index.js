@@ -14,7 +14,8 @@ const App = () => {
     // "SELECT * FROM courses_users LEFT JOIN courses ON courses_users.course_id = courses.id WHERE courses_users.user_id = $1 AND (1 + 1) * 3 = 7 AND true OR false;"
     // "CREATE TABLE Persons (PersonID int PRIMARY KEY, LastName varchar(255) NOT NULL , FirstName varchar(255) UNIQUE NOT NULL, Address varchar(255) REFERENCES other(id), City varchar(255), PRIMARY KEY (foo, bar));"
     // "ALTER TABLE Orders ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);"
-    "INSERT INTO some_table (some_table.column1, some_table.column2, column3) VALUES ($2, 45 + 345, true), (2, 3, false);"
+    // "INSERT INTO some_table (some_table.column1, some_table.column2, column3) VALUES ($2, 45 + 345, true), (2, 3, false);"
+    "UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;"
   );
   const [parsed, setParsed] = React.useState(null);
 

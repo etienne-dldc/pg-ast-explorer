@@ -67,6 +67,11 @@ function getNodeData(node) {
       ival: node.ival
     };
   }
+  if (node.type === "Float") {
+    return {
+      str: node.str
+    };
+  }
   if (node.type === "ColumnRef") {
     return {
       fields: convertNode(node.fields),
@@ -182,6 +187,13 @@ function getNodeData(node) {
       selectStmt: convertNode(node.selectStmt),
       relation: convertNode(node.relation),
       cols: convertNode(node.cols)
+    };
+  }
+  if (node.type === "UpdateStmt") {
+    return {
+      relation: convertNode(node.relation),
+      targetList: convertArray(node.targetList),
+      whereClause: convertNode(node.whereClause)
     };
   }
   console.log(node);
