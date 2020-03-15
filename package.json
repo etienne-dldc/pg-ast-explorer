@@ -19,17 +19,17 @@
   },
   "keywords": [],
   "devDependencies": {
-    "electron": "^7.1.7",
-    "electron-rebuild": "^1.8.8",
+    "electron": "^8.1.1",
+    "electron-rebuild": "^1.10.1",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
-    "core-js": "^3.6.1",
-    "electron-better-ipc": "^0.7.0",
+    "core-js": "^3.6.4",
+    "electron-better-ipc": "^0.8.0",
     "electron-devtools-installer": "^2.2.4",
     "pg-query-parser": "^0.2.4",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "regenerator-runtime": "^0.13.3"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "regenerator-runtime": "^0.13.5"
   }
 }
