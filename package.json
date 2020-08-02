@@ -15,20 +15,21 @@
   "homepage": "https://github.com/etienne-dldc/pg-ast-explorer#readme",
   "scripts": {
     "start": "electron ./backend/index.js",
-    "front": "parcel ./frontend/index.html "
+    "front": "parcel ./frontend/index.html",
+    "rebuild": "electron-rebuild"
   },
   "keywords": [],
   "devDependencies": {
-    "electron": "^9.1.0",
+    "electron": "^9.1.2",
     "electron-rebuild": "^1.11.0",
     "parcel-bundler": "^1.12.4"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "electron-devtools-installer": "^3.1.0",
+    "electron-devtools-installer": "^3.1.1",
     "pg-query-parser": "^0.2.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "regenerator-runtime": "^0.13.5"
+    "regenerator-runtime": "^0.13.7"
   }
 }
