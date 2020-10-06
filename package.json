@@ -20,7 +20,7 @@
   },
   "keywords": [],
   "devDependencies": {
-    "electron": "^9.1.2",
+    "electron": "^9.3.0",
     "electron-rebuild": "^1.11.0",
     "parcel-bundler": "^1.12.4"
   },
