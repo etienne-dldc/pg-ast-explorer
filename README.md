@@ -2,7 +2,7 @@
 
 > An app to explore postgresql AST
 
-![screenshot](<[https://](https://github.com/etienne-dldc/pg-ast-explorer/blob/master/screenshots/screen01.png)>)
+![alt](https://github.com/etienne-dldc/pg-ast-explorer/raw/main/screenshots/screen01.png)
 
 ## Running the app
 
