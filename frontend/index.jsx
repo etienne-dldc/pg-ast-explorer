@@ -1,13 +1,13 @@
 // polyfill
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { convertNode } from './utils';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { convertNode } from "./utils";
 
 const req = window.require;
-const { ipcRenderer: ipc } = req('electron');
+const { ipcRenderer: ipc } = req("electron");
 
 const App = () => {
   const [query, setQuery] = React.useState(
@@ -16,30 +16,30 @@ const App = () => {
     // "ALTER TABLE Orders ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);"
     // "INSERT INTO some_table (some_table.column1, some_table.column2, column3) VALUES ($2, 45 + 345, true), (2, 3, false);"
     // 'UPDATE table_name SET column1 = value1, column2 = value2 WHERE condition;'
-    'SELECT * FROM table_name WHERE col1 = 6;'
+    "SELECT * FROM table_name WHERE col1 = 6;"
   );
   const [parsed, setParsed] = React.useState(null);
 
   React.useEffect(() => {
-    ipc.on('parse-response', (event, parsed) => {
+    ipc.on("parse-response", (event, parsed) => {
       setParsed(parsed);
     });
   }, []);
 
   React.useEffect(() => {
-    ipc.send('parse', query);
+    ipc.send("parse", query);
   }, [query]);
 
   return (
     <div>
       <textarea
-        style={{ display: 'block', width: '100%' }}
+        style={{ display: "block", width: "100%" }}
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       ></textarea>
       <button
         onClick={async () => {
-          ipc.send('parse', query);
+          ipc.send("parse", query);
         }}
       >
         Parse
@@ -90,11 +90,12 @@ const NodeDisplay = ({ property, node }) => {
     <div>
       <p>
         <span onClick={() => setCollapsed((p) => !p)}>
-          {collapsed ? '▶︎' : '▼'} {property}: <span className="node-type">{node.type}</span>{' '}
+          {collapsed ? "▶︎" : "▼"} {property}:{" "}
+          <span className="node-type">{node.type}</span>{" "}
         </span>
         {collapsed === false && (
           <span className="btn" onClick={() => setRaw((p) => !p)}>
-            {raw ? 'pretty' : 'raw'}
+            {raw ? "pretty" : "raw"}
           </span>
         )}
       </p>
@@ -116,22 +117,22 @@ const ValueDisplay = ({ property, value }) => {
     if (value === null) {
       return (
         <>
-          <span style={{ color: '#FF9800' }}>null</span>
+          <span style={{ color: "#FF9800" }}>null</span>
         </>
       );
     }
-    if (typeof value === 'string') {
+    if (typeof value === "string") {
       return (
         <>
-          <span style={{ color: '#FF9800' }}>"{value}"</span>
+          <span style={{ color: "#FF9800" }}>"{value}"</span>
           <span className="value-type">(string)</span>
         </>
       );
     }
-    if (typeof value === 'number') {
+    if (typeof value === "number") {
       return (
         <>
-          <span style={{ color: '#E91E63' }}>{value}</span>
+          <span style={{ color: "#E91E63" }}>{value}</span>
           <span className="value-type">(number)</span>
         </>
       );
@@ -155,12 +156,12 @@ const NodeList = ({ nodes, property }) => {
     <div>
       <p>
         <span onClick={() => setCollapsed((p) => !p)}>
-          {collapsed ? '▶︎' : '▼'} {property}:{' '}
-          <span className="node-type">Array({nodes.length})</span>{' '}
+          {collapsed ? "▶︎" : "▼"} {property}:{" "}
+          <span className="node-type">Array({nodes.length})</span>{" "}
         </span>
         {collapsed === false && (
           <span className="btn" onClick={() => setRaw((p) => !p)}>
-            {raw ? 'pretty' : 'raw'}
+            {raw ? "pretty" : "raw"}
           </span>
         )}
       </p>
@@ -198,4 +199,4 @@ const NodeContent = ({ node }) => {
   });
 };
 
-ReactDOM.render(<App />, document.getElementById('app'));
+ReactDOM.createRoot(document.getElementById("app")).render(<App />);
