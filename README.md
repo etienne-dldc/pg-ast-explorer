@@ -2,9 +2,7 @@
 
 > An app to explore postgresql AST
 
-<p align="center">
-  <img src="https://github.com/etienne-dldc/pg-ast-explorer/blob/master/screenshots/screen01.png" width="597" alt="zensql logo">
-</p>
+![screenshot](<[https://](https://github.com/etienne-dldc/pg-ast-explorer/blob/master/screenshots/screen01.png)>)
 
 ## Running the app
 
